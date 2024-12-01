@@ -1,0 +1,119 @@
+/* styles/GameNoWebcam.module.css */
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: left; /* Center horizontally */
+  justify-content: flex-start; /* Align items to the top */
+  background-color: #0F001A;
+}
+
+.gameContainer {
+  position: relative;
+  width: 400px; /* Adjust as needed */
+  height: 600px; /* Adjust as needed */
+  margin: 0;
+  background-color: #0F001A;
+  overflow: hidden;
+}
+
+.arrowOutlines {
+  position: absolute;
+  bottom: 6%;
+  left: 3%;
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 7px; /* Adjust spacing */
+}
+
+.arrowOutlines img {
+  width: 50px; /* Adjust size */
+  height: 50px;
+}
+
+.arrowsContainer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* styles/Arrow.module.css */
+.arrow {
+  position: absolute;
+  bottom: -100px; /* Start below the visible area */
+  width: 50px; /* Adjust size as needed */
+  height: 50px;
+  animation-name: moveUp;
+  animation-duration: 5s; /* Match the duration in the Arrow component */
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes moveUp {
+  0% {
+    bottom: -100px;
+  }
+  100% {
+    bottom: calc(100% + 100px); /* Move past the top */
+  }
+}
+
+.score {
+  width: 160px;
+}
+
+.countdownContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  width: 400px;
+  height: 100vh;
+  background-color: #0F001A;
+  color: white;
+  padding: 0px 20px;
+}
+
+.countDownText {
+  font-size: 25px;
+  margin-right: 25px;
+}
+
+.loadingGif {
+  display: flex;
+  justify-content: center;
+  max-width: 200px;
+}
+
+.endingScreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 1); /* Semi-transparent black */
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 2s;
+  z-index: 10;
+}
+
+.endingScreen.visible {
+  opacity: 1;
+}
+
+.endingGift {
+  max-width: 200px;
+}
+
+.backLink {
+  color: #FF007F;
+  text-decoration: none;
+  font-size: 1.5rem;
+  margin-top: 20px;
+}
